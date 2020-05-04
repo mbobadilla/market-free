@@ -54,6 +54,10 @@ public class ConsultaEstadisticaService {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public Long distanciaPromedio() {
         long promedioDistancia = 0;
         long totalInvocaciones = 0;
@@ -68,6 +72,11 @@ public class ConsultaEstadisticaService {
         return Long.valueOf((promedioDistancia / totalInvocaciones));
     }
 
+    /**
+     *
+     * @param pais
+     * @return
+     */
     private Estadistica getPais(String pais) {
         Select.Where select = QueryBuilder.select().from("distancia").where(QueryBuilder.eq("pais", pais));
         return cassandraTemplate.selectOne(select.allowFiltering(), Estadistica.class);

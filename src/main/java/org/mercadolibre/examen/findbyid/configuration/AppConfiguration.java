@@ -1,5 +1,9 @@
 package org.mercadolibre.examen.findbyid.configuration;
 
+/**
+ * Clase de configurcion web
+ */
+
 import org.apache.commons.validator.routines.InetAddressValidator;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;

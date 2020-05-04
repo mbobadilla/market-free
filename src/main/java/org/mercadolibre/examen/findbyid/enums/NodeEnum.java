@@ -1,5 +1,8 @@
 package org.mercadolibre.examen.findbyid.enums;
 
+/**
+ * Enum de busqueda IP
+ */
 public enum NodeEnum {
     codISOPais("alpha3Code"), languages("nativeName"), time_by_timezone("timezones"), currencies("code"), moneda("rates"), coordenada("latlng");
 
