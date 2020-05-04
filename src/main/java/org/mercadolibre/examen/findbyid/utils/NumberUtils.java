@@ -11,10 +11,14 @@ public class NumberUtils {
 
 
     public static String fomatear(Double value){
-        String pattern = "###,###";
-        DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
-        return decimalFormat.format(value);
+        int pos=value.toString().indexOf(".");
+        return value.toString().substring(0,pos);
+       // double d=Double.parseDouble(value.toString());
+        //String pattern = "#,###.00";
+       // DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+        //return decimalFormat.format(d);
 
     }
 }

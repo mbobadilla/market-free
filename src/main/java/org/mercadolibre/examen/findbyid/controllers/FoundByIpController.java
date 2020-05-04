@@ -48,7 +48,7 @@ public class FoundByIpController {
     @GetMapping("/")
     public String getFormIp(Model model) {
         model.addAttribute("modelIp", new IpModel());
-        return "/formIp";
+        return "formIp";
     }
 
     /**

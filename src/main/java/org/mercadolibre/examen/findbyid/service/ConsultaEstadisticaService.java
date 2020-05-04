@@ -41,6 +41,7 @@ public class ConsultaEstadisticaService {
     public Double distancaLejana() {
         List<Estadistica> es = this.estadisticaRepository.findAllBy().sorted((o1, o2) -> o1.getDistanciaMayor().compareTo(o2.getDistanciaMayor()))
                 .collect(Collectors.toList());
+
         return Double.valueOf(NumberUtils.fomatear(es.get(es.size() - 1).getDistanciaMayor()));
 
     }
@@ -48,6 +49,7 @@ public class ConsultaEstadisticaService {
     public Double distanciaCercana() {
         List<Estadistica> es = this.estadisticaRepository.findAllBy().sorted((o1, o2) -> o1.getDistanciaMenor().compareTo(o2.getDistanciaMenor()))
                 .collect(Collectors.toList());
+
         return Double.valueOf(NumberUtils.fomatear(es.get(0).getDistanciaMenor()));
 
     }
