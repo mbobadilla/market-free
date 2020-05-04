@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>resultData</title>
+</head>
+<body>
+<h1><p th:text="'Resultado de la IP: '+${modelIp.ip}"/></h1>
+<p th:text="'código ISO país: ' + ${modelIp.dataIp.codISOPais}" />
+<div th:each="item,i:${modelIp}">
+    <p th:text="'lengua: '+${i.count}+' '+${modelIp.dataIp.languajes}"/>
+</div>
+<div th:each="hora,h:${modelIp}">
+    <p th:text="'Hora : '+${h.count}+' '+${modelIp.dataIp.horariosTime}"/>
+</div>
+<p th:text="'Distancia desde Buenos Aires : ' + ${modelIp.dataIp.distanciaIps}+' '+Kms." />
+<p th:text="'móneda local: ' + ${modelIp.dataIp.monedaLocal}" />
+<p th:text="'cotización U$S: ' + ${modelIp.dataIp.cotizDolar}" />
+
+
+<table>
+    <tr>
+        <td><a href="/">Consultar otra IP</a></td>
+    </tr>
+    <tr>
+        <td><a href="/distancia/bsas/lejana">Distancia mas lejana invocación servicios</a></td>
+    </tr>
+    <tr>
+        <td><a href="/distancia/bsas/cercana">Distancia mas cercana invocación servicios</a></td>
+    </tr>
+    <tr>
+        <td><a href="/distancia/promedio/all">Distancia promedio todas invocación servicios</a></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

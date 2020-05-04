@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>findByIp</title>
+</head>
+<body>
+
+
+    <h1>Ingrese su ip </h1>
+    <form action="#" th:action="@{/found}"  th:object="${modelIp}" method="post">
+        <p>IP: <input type="text" th:field="*{ip}"></p>
+        <div th:if="${#fields.hasErrors('ip')}" th:errors="*{ip}">Ip tiene error</div>
+        <div th:if="${#fields.hasErrors('errorValidation')}" th:errors="*{errorValidation}">Ip tiene error</div>
+        <p><input type="submit" value="Buscar" />
+
+    </form>
+</div>
+</body>
+</html>
